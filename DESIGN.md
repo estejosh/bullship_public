@@ -27,6 +27,54 @@ Ten are transferable jettons. **ANGEL** is not transferred — it is the
 
 ---
 
+## The Half-Life Token — the core mechanic
+
+The most novel piece: a token that **decays from the moment it's minted**.
+
+Every *bad* token has a **half-life** (e.g. DUMB = 30 days). The clock starts at
+the **first transfer** out of the treasury. From then on its effective value is:
+
+```
+effective = raw × 2^(−age / half_life)
+```
+
+After one half-life it's worth 50%; after two, 25%; it approaches zero but never
+quite dies.
+
+- **Age follows the token** — a transfer does not refresh the clock; the token
+  stays "radioactive".
+- **Good tokens have `half_life = ∞`** — they never decay.
+- **On-chain** — realized as a *custom* jetton whose `get_wallet_data` returns
+  the decayed balance, computed from the wallet's `(raw_balance, mint_time)`.
+
+This makes **time a first-class mechanic**: bad tokens expire, creating urgency
+to spend them (the shame ritual, the Good/Evil split) rather than hoard them.
+
+### Why on-chain half-life beats off-chain decay
+
+An off-chain decay (a daily DB halving) only bites the *unclaimed* balance —
+claim a token and it "escapes" the decay. An **on-chain** half-life means the
+token itself keeps shrinking *in the wallet*, so claiming can't dodge it.
+
+### The primitive (a custom decaying jetton)
+
+The wallet stores two fields instead of a single balance:
+
+```
+raw_balance  — the undecayed amount
+mint_time    — the weighted-average "birth" timestamp
+```
+
+- **Read**: `get_wallet_data` returns
+  `raw_balance × 2^(−(now − mint_time) / half_life)`.
+- **Transfer** of `X` effective tokens: move `X / decay_factor` raw, and merge
+  the sender's `mint_time` into the recipient's as a weighted average.
+
+Half-life values (defaults): DUMB 30d, SHAME 14d, LAZY 7d, EVIL 30d. Good tokens
+and ANGEL never decay.
+
+---
+
 ## The claim economy (the core loop)
 
 Balances are earned in-game (in a database). A **claim** moves them on-chain:
@@ -96,9 +144,10 @@ token is "settled" and stops decaying.
 
 See `src/` for the scrubbed reference implementation of the novel pieces:
 
+- `half-life-token.js` — the decaying jetton primitive (the core mechanic)
 - `bridge.js` — the batched jetton bridge (one wallet message, rent-forward)
 - `claim.js` — the paid claim + global claim (Angel-first + subsidy)
-- `decay.js` — the daily decay + Angel shield
+- `decay.js` — the daily DB decay + Angel shield (off-chain fallback)
 - `buffs.js` — the Angel buff math
 
 ---
