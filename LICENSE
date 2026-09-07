@@ -1,0 +1,25 @@
+# Source-Available License
+
+Copyright (c) 2026 Bullship.
+
+This work is **source-available**: the code and documentation are provided so
+you can **read, learn from, and discuss** them.
+
+You may **not**, without a separate written agreement with the copyright holder:
+
+- fork, deploy, or operate a competing product based on this work;
+- sell, sublicense, or otherwise commercialize this work or derivative works;
+- remove this notice.
+
+Permission is granted to:
+
+- view and study the source;
+- quote and discuss the design, with attribution.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+This is a simplified source-available notice. For the production repository,
+the operator may substitute a formal license (e.g. BUSL-1.1) before public
+distribution.

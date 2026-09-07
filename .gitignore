@@ -1,0 +1,8 @@
+.env
+*.env
+.env.*
+secrets/
+minter_key
+*.pem
+*.key
+node_modules/
