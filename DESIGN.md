@@ -105,16 +105,23 @@ Angel is the "skin in the game" score. It grants:
 
 | Buff | Requirement | Effect |
 |------|-------------|--------|
-| Decay Shield | ≥ 1 Angel | bad tokens decay at **75%** instead of 50% |
 | Oracle's Favor | ≥ 1 Angel | **+2% SMART** per Angel on correct answers (cap +50%) |
 | Claim Priority | ≥ 1 Angel | bridged first in the global claim |
+
+> **Removed: "Decay Shield".** An earlier design gave Angel holders a slower
+> decay (75% instead of 50%). That buff needs the contract to read the holder's
+> *Angel* balance — a cross-contract read, which is not cheap on TON. Instead,
+> the decay rate is a **per-token** property (each bad token has its own
+> half-life; good tokens and ANGEL never decay). The "shield" is structural:
+> hold good tokens instead of bad ones.
 
 ---
 
 ## Decay
 
 Bad tokens (DUMB, SHAME, LAZY, EVIL) **decay daily** — halved each cycle — to
-prevent hoarding and keep the game moving. Angel holders decay slower.
+prevent hoarding and keep the game moving. The decay rate is a **per-token**
+property (the half-life); it does not depend on the holder's Angel balance.
 
 Decay applies to the **unclaimed** (in-game) balance. Once claimed on-chain, a
 token is "settled" and stops decaying.
@@ -150,7 +157,7 @@ See `src/` for the scrubbed reference implementation of the novel pieces:
 - `half-life-token.js` — the decaying jetton primitive (the core mechanic)
 - `bridge.js` — the batched jetton bridge (one wallet message, rent-forward)
 - `claim.js` — the paid claim + global claim (Angel-first + subsidy)
-- `decay.js` — the daily DB decay + Angel shield (off-chain fallback)
+- `decay.js` — the daily DB decay (off-chain fallback)
 - `buffs.js` — the Angel buff math
 
 ---
