@@ -67,6 +67,9 @@ mint_time    — the weighted-average "birth" timestamp
 
 - **Read**: `get_wallet_data` returns
   `raw_balance × 2^(−(now − mint_time) / half_life)`.
+- **Decay clock starts at the first transfer OUT of the maker wallet** — the
+  maker's own wallet has `mint_time = 0` (no decay); the first transfer to a
+  player sets `mint_time = now()`; every later transfer passes the age along.
 - **Transfer** of `X` effective tokens: move `X / decay_factor` raw, and merge
   the sender's `mint_time` into the recipient's as a weighted average.
 
