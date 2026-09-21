@@ -1,25 +1,111 @@
-# Source-Available License
+The Usufruct License (UFL) — Version 2.0
+Canonical text, whitepaper, and FAQ: https://github.com/estejosh/UFL-Usufruct-License
 
-Copyright (c) 2026 Bullship.
+Copyright (c) 2026 Bullship
 
-This work is **source-available**: the code and documentation are provided so
-you can **read, learn from, and discuss** them.
+Operational Scope: No-Competing-Service
 
-You may **not**, without a separate written agreement with the copyright holder:
+## 1. Grant of Use
 
-- fork, deploy, or operate a competing product based on this work;
-- sell, sublicense, or otherwise commercialize this work or derivative works;
-- remove this notice.
+Subject to the terms below and the Operational Scope declared above,
+the Licensor grants anyone the free, perpetual, worldwide right to use
+the Software — in source or compiled form, at any scale — without
+payment or a separate license beyond what Section 1A requires. This
+includes running the Software, deploying it, integrating with it
+through its published interfaces, and operating a product or service
+built on top of it, as scoped by Section 1A.
 
-Permission is granted to:
+## 1A. Operational Scope
 
-- view and study the source;
-- quote and discuss the design, with attribution.
+The Operational Scope declared above states the only limit, if any, on
+Section 1's grant. Exactly one scope applies to this Software:
 
-THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE AND NONINFRINGEMENT.
+No-Competing-Service — Section 1's grant excludes operating the
+Software, or a modified version or fork of it, as a product or service
+offered to third parties in competition with a product or service the
+Licensor offers using the Software. All other uses described in
+Section 1 are unconditional.
 
-This is a simplified source-available notice. For the production repository,
-the operator may substitute a formal license (e.g. BUSL-1.1) before public
-distribution.
+## 2. Reserved Rights
+
+The following rights are reserved to the Licensor and are NOT granted by
+Section 1. They require a separate written license from the Licensor,
+except as Section 2A permits:
+
+  (a) Distributing the Software, or any modified version, fork, or
+      substantially similar reimplementation of it, to any third party,
+      in source or compiled form.
+  (b) Incorporating the Software's source code into another product or
+      service that is distributed, sold, or otherwise made available to
+      third parties.
+  (c) Using the Licensor's name, marks, or claims of compatibility
+      ("Bullship-compatible," "built on Bullship," etc.) in
+      connection with a distributed derivative.
+
+## 2A. Forks of Decentralized or Network Software
+
+If the Software is designed to run as a node, client, or peer in a
+decentralized network, blockchain, or similar peer-to-peer protocol,
+Section 2(a) does not require a separate license for distributing a
+modified version, fork, or independent reimplementation of it —
+including to operate a competing network — provided the distributed
+work:
+
+  (i) prominently and accurately credits Bullship as the origin
+      of the Software or protocol, in its README, whitepaper, or
+      equivalent primary documentation; and
+  (ii) keeps the canonical-source notice required by Section 7 intact.
+
+Distributing a fork that removes, obscures, or falsifies this
+attribution is not permitted under this exception and still requires a
+separate license under Section 2(a). This section does not affect
+Sections 2(b) or 2(c): incorporating the Software into another
+distributed product, and using the Licensor's name or marks to claim
+compatibility, still require a separate license regardless of
+attribution.
+
+## 3. Why "Usufruct"
+
+In civil law, a usufruct is the right to use property belonging to
+another and enjoy its benefits, without the right to alter its substance
+or transfer ownership to someone else. This license grants exactly that:
+full use, no transfer.
+
+## 4. Contributions
+
+Contributions submitted to a Software repository under this license are
+accepted under these same terms and are granted back to the Licensor to
+the extent necessary to keep this license enforceable across the
+combined work.
+
+## 5. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+## 6. Note on Classification
+
+This is a source-available license, not an OSI-approved open source
+license. The Open Source Definition requires unrestricted redistribution
+rights, which Section 2 intentionally withholds regardless of
+Operational Scope. Some Operational Scopes under Section 1A also
+withhold uses the Open Source Definition requires to be unrestricted.
+The source is public; which uses are free depends on the Operational
+Scope declared above.
+
+## 7. Notice
+
+The canonical-source line at the top of this license text (or an
+equivalent pointer to https://github.com/estejosh/UFL-Usufruct-License)
+must be kept intact when this license text is copied into another
+project. This is a notice requirement on the license text itself, not
+an additional condition on using the Software beyond Section 1A.
+
+---
+SPDX identifier: UFL is not on the official SPDX license list. Per SPDX
+convention for licenses outside that list, use `LicenseRef-UFL-2.0-C` —
+not a bare `UFL-2.0-C`, which would misrepresent it as SPDX-registered.
