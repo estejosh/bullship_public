@@ -23,8 +23,15 @@ from, and discussed. It is **not** the production system.
 
 ## License
 
-See `LICENSE`. Source-available: you may view and learn from it, but not
-fork it into a competing product without permission.
+**[Usufruct License (UFL) v2.0](LICENSE)**, Operational Scope:
+**No-Competing-Service** (tag `UFL-C-1a`): you may view, run, and learn from
+this design and reference code, but may not operate it — or a fork of it —
+as a product or service competing with Bullship's own offering, without a
+separate license.
+
+UFL is not on the SPDX license list; cite it as `LicenseRef-UFL-2.0-C`. See
+the canonical license text and generator at
+[estejosh/UFL-Usufruct-License](https://github.com/estejosh/UFL-Usufruct-License).
 
 ## Status
 
