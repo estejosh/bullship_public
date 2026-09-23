@@ -23,13 +23,13 @@ from, and discussed. It is **not** the production system.
 
 ## License
 
-**[Usufruct License (UFL) v2.1](LICENSE)**, Operational Scope:
+**[Usufruct License (UFL) v2.2](LICENSE)**, Operational Scope:
 **No-Competing-Service** (tag `UFL-C-1a`): you may view, run, and learn from
 this design and reference code, but may not operate it — or a fork of it —
 as a product or service competing with Bullship's own offering, without a
 separate license.
 
-UFL is not on the SPDX license list; cite it as `LicenseRef-UFL-2.1-C`. See
+UFL is not on the SPDX license list; cite it as `LicenseRef-UFL-2.2-C`. See
 the canonical license text and generator at
 [estejosh/UFL-Usufruct-License](https://github.com/estejosh/UFL-Usufruct-License).
 
